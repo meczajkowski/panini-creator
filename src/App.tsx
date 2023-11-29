@@ -1,9 +1,12 @@
-import './App.module.css';
+import styles from './App.module.css';
+import Button from './components/UI/Button';
+import { ButtonType } from './enums';
 
 function App() {
   return (
-    <div>
-      <h1>Panini Creator</h1>
+    <div className={styles.testDiv}>
+      <Button type={ButtonType.Primary}>RANDOMIZE PANINI</Button>
+      <Button type={ButtonType.Secondary}>RANDOMIZE PANINI</Button>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.button {
+  font-family: 'Oxygen Mono', monospace;
+  font-size: 12px;
+  padding: 14px 20px;
+  background-color: transparent;
+  border: 0.5px solid transparent;
+
+  cursor: pointer;
+}
+
+.buttonPrimary {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.buttonSecondary {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+.buttonPrimary:hover {
+  text-decoration: underline;
+}
+
+.buttonSecondary:hover {
+  border: 0.5px solid var(--color-primary);
+}
