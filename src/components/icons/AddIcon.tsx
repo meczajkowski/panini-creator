@@ -17,17 +17,17 @@ const AddIcon = () => {
         height='16.5'
         rx='8.25'
         stroke='black'
-        stroke-width='0.5'
+        strokeWidth='0.5'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M8.25 12.5L8.25 4.5L8.75 4.5L8.75 12.5L8.25 12.5Z'
         fill='black'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M12.5 8.75H4.5V8.25H12.5V8.75Z'
         fill='black'
       />

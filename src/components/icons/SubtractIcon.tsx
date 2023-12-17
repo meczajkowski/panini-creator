@@ -17,11 +17,11 @@ const SubtractIcon = () => {
         height='16.5'
         rx='8.25'
         stroke='black'
-        stroke-width='0.5'
+        strokeWidth='0.5'
       />
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M12.5 8.75H4.5V8.25H12.5V8.75Z'
         fill='black'
       />
