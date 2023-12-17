@@ -1,0 +1,7 @@
+.button:hover {
+  fill: var(--color-primary);
+}
+
+.button:hover path {
+  fill: var(--color-secondary);
+}
