@@ -3,9 +3,10 @@ import styles from './App.module.css';
 import Button from './components/UI/Button';
 import CounterButton from './components/UI/CounterButton';
 import Switch from './components/UI/Switch';
-import { ButtonType, CounterButtonType } from './enums';
+import { ArrowDirection, ButtonType, CounterButtonType } from './enums';
 import WheatIcon from './components/icons/BreadIcons/WheatIcon';
 import GrainIcon from './components/icons/BreadIcons/GrainIcon';
+import BigArrow from './components/icons/BigArrow';
 
 function App() {
   const [SwitchisToggled, setSwitchIsToggled] = useState(false);
@@ -25,6 +26,8 @@ function App() {
 
       <WheatIcon />
       <GrainIcon />
+      <BigArrow direction={ArrowDirection.Prev} />
+      <BigArrow direction={ArrowDirection.Next} />
     </div>
   );
 }
