@@ -7,6 +7,9 @@ import { ButtonType, CounterButtonType } from './enums';
 import WheatIcon from './components/icons/BreadIcons/WheatIcon';
 import GrainIcon from './components/icons/BreadIcons/GrainIcon';
 import Carousel from './components/UI/Carousel';
+import { breadVariants } from './data/bread';
+import Select from './components/UI/Select';
+import { cheeseVariants } from './data/cheese';
 
 function App() {
   // switch
@@ -60,8 +63,5 @@ function App() {
     </div>
   );
 }
-import { breadVariants } from './data/bread';
-import Select from './components/UI/Select';
-import { cheeseVariants } from './data/cheese';
 
 export default App;

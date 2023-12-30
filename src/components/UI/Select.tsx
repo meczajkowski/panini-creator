@@ -2,6 +2,9 @@ import { useState } from 'react';
 import styles from './Select.module.css';
 import classNames from 'classnames';
 
+// components
+import SelectArrow from '../icons/SelectArrow';
+
 interface SelectComponentProps {
   options: string[];
   onSelect: (option: string) => void;
@@ -26,7 +29,7 @@ const Select = (props: SelectComponentProps) => {
       <div className={styles.selectDisplay} onClick={toggleDropdown}>
         <span>{selectedOption}</span>
         <span className={classNames(styles.arrow, isOpen ? styles.open : '')}>
-          ▼
+          <SelectArrow />
         </span>
       </div>
       {isOpen && (
