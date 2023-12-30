@@ -1,0 +1,42 @@
+.selectComponent {
+  position: relative;
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+
+.selectDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.selectOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+  z-index: 10;
+}
+
+.option {
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}

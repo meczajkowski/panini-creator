@@ -24,6 +24,8 @@ function App() {
     setCurrentIndex((currentIndex - 1 + children.length) % children.length);
   };
 
+  // select
+
   return (
     <div className={styles.testDiv}>
       <Button type={ButtonType.Primary}>RANDOMIZE PANINI</Button>
@@ -48,9 +50,18 @@ function App() {
           <div key={index}>{variant}</div>
         ))}
       </Carousel>
+
+      <Select
+        options={cheeseVariants}
+        onSelect={(option) => {
+          console.log(option);
+        }}
+      />
     </div>
   );
 }
 import { breadVariants } from './data/bread';
+import Select from './components/UI/Select';
+import { cheeseVariants } from './data/cheese';
 
 export default App;
