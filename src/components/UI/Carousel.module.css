@@ -1,0 +1,14 @@
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* change for 100% later */
+  width: 250px;
+}
+
+.carouselContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

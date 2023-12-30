@@ -4,6 +4,7 @@ import styles from './BigArrow.module.css';
 
 interface BigArrowProps {
   direction: ArrowDirection;
+  onClick?: () => void;
 }
 
 const BigArrow = (props: BigArrowProps) => {
@@ -14,6 +15,7 @@ const BigArrow = (props: BigArrowProps) => {
 
   return (
     <svg
+      onClick={props.onClick}
       className={classes}
       xmlns='http://www.w3.org/2000/svg'
       width='12'
