@@ -7,6 +7,9 @@ import { ButtonType, CounterButtonType } from './enums';
 import WheatIcon from './components/icons/BreadIcons/WheatIcon';
 import GrainIcon from './components/icons/BreadIcons/GrainIcon';
 import Carousel from './components/UI/Carousel';
+import { breadVariants } from './data/bread';
+import Select from './components/UI/Select';
+import { cheeseVariants } from './data/cheese';
 
 function App() {
   // switch
@@ -23,6 +26,8 @@ function App() {
   const handlePrevClick = () => {
     setCurrentIndex((currentIndex - 1 + children.length) % children.length);
   };
+
+  // select
 
   return (
     <div className={styles.testDiv}>
@@ -48,9 +53,15 @@ function App() {
           <div key={index}>{variant}</div>
         ))}
       </Carousel>
+
+      <Select
+        options={cheeseVariants}
+        onSelect={(option) => {
+          console.log(option);
+        }}
+      />
     </div>
   );
 }
-import { breadVariants } from './data/bread';
 
 export default App;
