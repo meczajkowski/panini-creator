@@ -15,3 +15,10 @@ button {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
+
+hr {
+  border: none;
+  height: 0.5px;
+  width: 100%;
+  background-color: var(--color-primary);
+}

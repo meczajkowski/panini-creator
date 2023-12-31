@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  max-width: 630px;
+  margin: 16px auto;
+  border: 0.5px solid var(--color-primary);
+  padding: 80px;
+  font-family: Instrument Serif;
+  font-style: normal;
+  line-height: normal;
+}
+
+.sectionTitle {
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 40px;
+}

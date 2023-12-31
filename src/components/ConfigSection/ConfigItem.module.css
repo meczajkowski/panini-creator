@@ -1,0 +1,19 @@
+.title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.wrapper {
+  border-block: 0.5px solid var(--color-primary);
+  padding-block: 20px;
+}
+
+.wrapper:not(:first-of-type) {
+  border-top: none;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
