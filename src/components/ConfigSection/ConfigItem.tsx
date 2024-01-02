@@ -2,7 +2,9 @@ import { useState } from 'react';
 import styles from './ConfigItem.module.css';
 import Carousel from '../UI/Carousel';
 import Select from '../UI/Select';
-import { ConfigItemSelectType, ConfigItemTitle } from '../../enums';
+import { ButtonType, ConfigItemSelectType, ConfigItemTitle } from '../../enums';
+import Button from '../UI/Button';
+import MultiSelect from '../UI/MultiSelect';
 
 interface ConfigItemProps {
   title: ConfigItemTitle;
@@ -43,6 +45,13 @@ const ConfigItem = (props: ConfigItemProps) => {
             options={props.children}
             onSelect={(option) => {
               console.log(option);
+            }}
+          />
+        ) : props.selectType === ConfigItemSelectType.MultiSelect ? (
+          <MultiSelect
+            options={props.children}
+            onSelect={(selectedOptions) => {
+              console.log(selectedOptions);
             }}
           />
         ) : (

@@ -1,6 +1,7 @@
 export enum ButtonType {
   Primary = 'primary',
   Secondary = 'secondary',
+  MultiSelect = 'multiSelect',
 }
 
 export const enum CounterButtonType {
