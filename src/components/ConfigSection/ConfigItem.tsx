@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import styles from './ConfigItem.module.css';
 import Carousel from '../UI/Carousel';
 import Select from '../UI/Select';
-import { ButtonType, ConfigItemSelectType, ConfigItemTitle } from '../../enums';
-import Button from '../UI/Button';
+import { ConfigItemSelectType, ConfigItemTitle } from '../../enums';
 import MultiSelect from '../UI/MultiSelect';
 
 interface ConfigItemProps {
@@ -11,6 +10,7 @@ interface ConfigItemProps {
   required: boolean;
   selectType: ConfigItemSelectType;
   children: string[];
+  icons?: ReactNode[];
 }
 
 const ConfigItem = (props: ConfigItemProps) => {
@@ -35,6 +35,7 @@ const ConfigItem = (props: ConfigItemProps) => {
             currentChildrenIndex={currentIndex}
             onNextClick={handleNextClick}
             onPrevClick={handlePrevClick}
+            icons={props.icons}
           >
             {props.children.map((variant, index) => (
               <div key={index}>{variant}</div>

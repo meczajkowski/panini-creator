@@ -17,6 +17,8 @@ import { cheeseVariants } from './data/cheese';
 import { meatVariants } from './data/meat';
 import { dressingVariants } from './data/dressing';
 import { vegetableVariant } from './data/vegetable';
+import WheatIcon from './components/icons/BreadIcons/WheatIcon';
+import GrainIcon from './components/icons/BreadIcons/GrainIcon';
 
 function App() {
   // switch
@@ -43,6 +45,7 @@ function App() {
           title={ConfigItemTitle.Bread}
           required={true}
           selectType={ConfigItemSelectType.Carousel}
+          icons={[<WheatIcon />, <GrainIcon />]}
         >
           {breadVariants}
         </ConfigItem>

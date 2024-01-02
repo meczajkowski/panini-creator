@@ -9,16 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-button {
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
-}
-
-hr {
-  border: none;
-  height: 0.5px;
-  width: 100%;
-  background-color: var(--color-primary);
 }
