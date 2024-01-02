@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import styles from './ConfigItem.module.css';
-import { breadVariants } from '../../data/bread';
 import Carousel from '../UI/Carousel';
 import Select from '../UI/Select';
-import { cheeseVariants } from '../../data/cheese';
 import { ConfigItemSelectType, ConfigItemTitle } from '../../enums';
 
 interface ConfigItemProps {
   title: ConfigItemTitle;
   required: boolean;
   selectType: ConfigItemSelectType;
+  children: string[];
 }
 
 const ConfigItem = (props: ConfigItemProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const children = breadVariants;
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % children.length);
+    setCurrentIndex((currentIndex + 1) % props.children.length);
   };
 
   const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + children.length) % children.length);
+    setCurrentIndex(
+      (currentIndex - 1 + props.children.length) % props.children.length
+    );
   };
 
   return (
@@ -34,13 +34,13 @@ const ConfigItem = (props: ConfigItemProps) => {
             onNextClick={handleNextClick}
             onPrevClick={handlePrevClick}
           >
-            {children.map((variant, index) => (
+            {props.children.map((variant, index) => (
               <div key={index}>{variant}</div>
             ))}
           </Carousel>
         ) : props.selectType === ConfigItemSelectType.Select ? (
           <Select
-            options={cheeseVariants}
+            options={props.children}
             onSelect={(option) => {
               console.log(option);
             }}

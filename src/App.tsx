@@ -12,6 +12,11 @@ import {
 import Button from './components/UI/Button';
 import ConfigSection from './components/ConfigSection/ConfigSection';
 import ConfigItem from './components/ConfigSection/ConfigItem';
+import { breadVariants } from './data/bread';
+import { cheeseVariants } from './data/cheese';
+import { meatVariants } from './data/meat';
+import { dressingVariants } from './data/dressing';
+import { vegetableVariant } from './data/vegetable';
 
 function App() {
   // switch
@@ -38,31 +43,41 @@ function App() {
           title={ConfigItemTitle.Bread}
           required={true}
           selectType={ConfigItemSelectType.Carousel}
-        />
+        >
+          {breadVariants}
+        </ConfigItem>
         <ConfigItem
           title={ConfigItemTitle.Cheese}
           required={true}
           selectType={ConfigItemSelectType.Select}
-        />
+        >
+          {cheeseVariants}
+        </ConfigItem>
         <ConfigItem
           title={ConfigItemTitle.Meat}
           required={true}
           selectType={ConfigItemSelectType.Select}
-        />
+        >
+          {meatVariants}
+        </ConfigItem>
         <ConfigItem
           title={ConfigItemTitle.Dressing}
           required={true}
           selectType={ConfigItemSelectType.Carousel}
-        />
+        >
+          {dressingVariants}
+        </ConfigItem>
         <ConfigItem
           title={ConfigItemTitle.Vegetables}
           required={true}
           selectType={ConfigItemSelectType.MultiSelect}
-        />
+        >
+          {vegetableVariant}
+        </ConfigItem>
       </ConfigSection>
 
-      {/* EXTRAS
-      <ConfigSection title={ConfigSectionTitle.ConfigureExtras}>
+      {/* {/* EXTRAS */}
+      {/* <ConfigSection title={ConfigSectionTitle.ConfigureExtras}>
         <ConfigItem
           title={ConfigItemTitle.Egg}
           required={true}
@@ -83,8 +98,8 @@ function App() {
           required={true}
           selectType={ConfigItemSelectType.Checkbox}
         />
-      </ConfigSection>
-
+      </ConfigSection> */}
+      {/* 
       FINALIZE 
       <ConfigSection title={ConfigSectionTitle.FinalizeOrder}>
         <ConfigItem
