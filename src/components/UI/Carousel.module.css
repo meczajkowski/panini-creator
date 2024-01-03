@@ -8,6 +8,12 @@
 }
 
 .carouselContent {
+  font-family: Oxygen Mono;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
   display: flex;
   align-items: center;
   gap: 8px;

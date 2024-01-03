@@ -10,6 +10,7 @@ interface CarouselProps {
   onNextClick: () => void;
   onPrevClick: () => void;
   children: ReactNode[];
+  icons?: ReactNode[];
 }
 
 const Carousel = (props: CarouselProps) => {
@@ -17,6 +18,7 @@ const Carousel = (props: CarouselProps) => {
     <div className={styles.carouselWrapper}>
       <BigArrow direction={ArrowDirection.Prev} onClick={props.onPrevClick} />
       <div className={styles.carouselContent}>
+        {props.icons && props.icons[props.currentChildrenIndex]}
         {props.children[props.currentChildrenIndex]}
       </div>
       <BigArrow direction={ArrowDirection.Next} onClick={props.onNextClick} />
