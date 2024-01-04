@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonType } from '../../enums';
 import Button from './Button';
 import styles from './MultiSelect.module.css';
@@ -11,7 +11,7 @@ interface MultiSelectProps {
 const MultiSelect = (props: MultiSelectProps) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const toggleSelection = async (variant: string) => {
+  const toggleSelection = (variant: string) => {
     const isSelected = selectedOptions.includes(variant);
     if (isSelected) {
       // Variant is already selected, remove it from the array
@@ -24,10 +24,14 @@ const MultiSelect = (props: MultiSelectProps) => {
     }
   };
 
-  const handleButtonClick = async (variant: string) => {
+  const handleButtonClick = (variant: string) => {
     toggleSelection(variant);
-    props.onSelect(selectedOptions);
   };
+
+  useEffect(() => {
+    // This effect will be triggered whenever selectedOptions changes
+    props.onSelect(selectedOptions);
+  }, [selectedOptions]);
 
   return (
     <div className={styles.wrapper}>
