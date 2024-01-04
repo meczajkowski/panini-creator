@@ -21,7 +21,8 @@ const Carousel = (props: CarouselProps) => {
   };
 
   const handlePrevClick = () => {
-    const prevIndex = (currentIndex - 1) % props.options.length;
+    const prevIndex =
+      (currentIndex - 1 + props.options.length) % props.options.length;
     setCurrentIndex(prevIndex);
     props.onSelect(props.options[prevIndex]);
   };
