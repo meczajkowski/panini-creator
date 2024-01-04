@@ -13,22 +13,17 @@ interface CarouselProps {
 
 const Carousel = (props: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(
-    props.options[currentIndex]
-  );
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % props.options.length);
-    setSelectedOption(props.options[currentIndex]);
-    props.onSelect(selectedOption);
+    const nextIndex = (currentIndex + 1) % props.options.length;
+    setCurrentIndex(nextIndex);
+    props.onSelect(props.options[nextIndex]);
   };
 
   const handlePrevClick = () => {
-    setCurrentIndex(
-      (currentIndex - 1 + props.options.length) % props.options.length
-    );
-    setSelectedOption(props.options[currentIndex]);
-    props.onSelect(selectedOption);
+    const prevIndex = (currentIndex - 1) % props.options.length;
+    setCurrentIndex(prevIndex);
+    props.onSelect(props.options[prevIndex]);
   };
 
   return (
