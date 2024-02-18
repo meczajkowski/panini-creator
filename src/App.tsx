@@ -22,7 +22,6 @@ import GrainIcon from './components/icons/BreadIcons/GrainIcon';
 
 function App() {
   // switch
-  const [SwitchisToggled, setSwitchIsToggled] = useState(false);
 
   return (
     // <div className={styles.testDiv}>
@@ -30,12 +29,7 @@ function App() {
     //   <Button type={ButtonType.Secondary}>RANDOMIZE PANINI</Button>
     //   <CounterButton type={CounterButtonType.Add} />
     //   <CounterButton type={CounterButtonType.Substract} />
-    //   <Switch
-    //     isToggled={SwitchisToggled}
-    //     onToggle={() => {
-    //       setSwitchIsToggled((prevState) => !prevState);
-    //     }}
-    //   />
+
     // </div>
 
     <>
@@ -46,7 +40,7 @@ function App() {
           required={true}
           selectType={ConfigItemSelectType.Carousel}
           icons={[<WheatIcon />, <GrainIcon />]}
-          quantity={1}
+          // quantity={1}
         >
           {breadVariants}
         </ConfigItem>
@@ -54,7 +48,7 @@ function App() {
           title={ConfigItemTitle.Cheese}
           required={true}
           selectType={ConfigItemSelectType.Select}
-          quantity={2}
+          quantity={1}
         >
           {cheeseVariants}
         </ConfigItem>
@@ -62,7 +56,7 @@ function App() {
           title={ConfigItemTitle.Meat}
           required={true}
           selectType={ConfigItemSelectType.Select}
-          quantity={2}
+          quantity={1}
         >
           {meatVariants}
         </ConfigItem>
@@ -70,7 +64,7 @@ function App() {
           title={ConfigItemTitle.Dressing}
           required={true}
           selectType={ConfigItemSelectType.Carousel}
-          quantity={2}
+          quantity={1}
         >
           {dressingVariants}
         </ConfigItem>
@@ -78,7 +72,7 @@ function App() {
           title={ConfigItemTitle.Vegetables}
           required={true}
           selectType={ConfigItemSelectType.MultiSelect}
-          quantity={1}
+          // quantity={1}
         >
           {vegetableVariant}
         </ConfigItem>
