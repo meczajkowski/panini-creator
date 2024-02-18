@@ -15,5 +15,13 @@
 .content {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
   /* align-items: center; */
+}
+
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 250px;
 }

@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: space-between;
 
-  /* change for 100% later */
-  width: 250px;
+  width: 100%;
 }
 
 .carouselContent {

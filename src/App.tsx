@@ -46,6 +46,7 @@ function App() {
           required={true}
           selectType={ConfigItemSelectType.Carousel}
           icons={[<WheatIcon />, <GrainIcon />]}
+          quantity={1}
         >
           {breadVariants}
         </ConfigItem>
@@ -53,6 +54,7 @@ function App() {
           title={ConfigItemTitle.Cheese}
           required={true}
           selectType={ConfigItemSelectType.Select}
+          quantity={2}
         >
           {cheeseVariants}
         </ConfigItem>
@@ -60,6 +62,7 @@ function App() {
           title={ConfigItemTitle.Meat}
           required={true}
           selectType={ConfigItemSelectType.Select}
+          quantity={2}
         >
           {meatVariants}
         </ConfigItem>
@@ -67,6 +70,7 @@ function App() {
           title={ConfigItemTitle.Dressing}
           required={true}
           selectType={ConfigItemSelectType.Carousel}
+          quantity={2}
         >
           {dressingVariants}
         </ConfigItem>
@@ -74,6 +78,7 @@ function App() {
           title={ConfigItemTitle.Vegetables}
           required={true}
           selectType={ConfigItemSelectType.MultiSelect}
+          quantity={1}
         >
           {vegetableVariant}
         </ConfigItem>
