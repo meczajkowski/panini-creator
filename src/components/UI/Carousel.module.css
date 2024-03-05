@@ -3,11 +3,16 @@
   align-items: center;
   justify-content: space-between;
 
-  /* change for 100% later */
-  width: 250px;
+  width: 100%;
 }
 
 .carouselContent {
+  font-family: Oxygen Mono;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
   display: flex;
   align-items: center;
   gap: 8px;

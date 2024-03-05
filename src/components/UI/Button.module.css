@@ -26,3 +26,13 @@
 .buttonSecondary:hover {
   border: 0.5px solid var(--color-primary);
 }
+
+.buttonMultiSelect {
+  padding: 10px 20px;
+  background-color: var(--color-tertiary);
+}
+
+.buttonMultiSelectChecked {
+  border: 0.5px solid var(--color-primary);
+  background: var(--color-secondary);
+}

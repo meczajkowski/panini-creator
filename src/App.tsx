@@ -1,66 +1,129 @@
 import { useState } from 'react';
 import styles from './App.module.css';
+
+import {
+  ButtonType,
+  ConfigItemSelectType,
+  ConfigItemTitle,
+  ConfigSectionTitle,
+} from './enums';
+
+// components
 import Button from './components/UI/Button';
-import CounterButton from './components/UI/CounterButton';
-import Switch from './components/UI/Switch';
-import { ButtonType, CounterButtonType } from './enums';
+import ConfigSection from './components/ConfigSection/ConfigSection';
+import ConfigItem from './components/ConfigSection/ConfigItem';
+import { breadVariants } from './data/bread';
+import { cheeseVariants } from './data/cheese';
+import { meatVariants } from './data/meat';
+import { dressingVariants } from './data/dressing';
+import { vegetableVariant } from './data/vegetable';
 import WheatIcon from './components/icons/BreadIcons/WheatIcon';
 import GrainIcon from './components/icons/BreadIcons/GrainIcon';
-import Carousel from './components/UI/Carousel';
-import { breadVariants } from './data/bread';
-import Select from './components/UI/Select';
-import { cheeseVariants } from './data/cheese';
 
 function App() {
   // switch
-  const [SwitchisToggled, setSwitchIsToggled] = useState(false);
-
-  // carousel
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const children = breadVariants;
-
-  const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % children.length);
-  };
-
-  const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + children.length) % children.length);
-  };
-
-  // select
 
   return (
-    <div className={styles.testDiv}>
-      <Button type={ButtonType.Primary}>RANDOMIZE PANINI</Button>
-      <Button type={ButtonType.Secondary}>RANDOMIZE PANINI</Button>
-      <CounterButton type={CounterButtonType.Add} />
-      <CounterButton type={CounterButtonType.Substract} />
-      <Switch
-        isToggled={SwitchisToggled}
-        onToggle={() => {
-          setSwitchIsToggled((prevState) => !prevState);
-        }}
-      />
+    // <div className={styles.testDiv}>
+    //   <Button type={ButtonType.Primary}>RANDOMIZE PANINI</Button>
+    //   <Button type={ButtonType.Secondary}>RANDOMIZE PANINI</Button>
+    //   <CounterButton type={CounterButtonType.Add} />
+    //   <CounterButton type={CounterButtonType.Substract} />
 
-      <WheatIcon />
-      <GrainIcon />
-      <Carousel
-        currentChildrenIndex={currentIndex}
-        onNextClick={handleNextClick}
-        onPrevClick={handlePrevClick}
-      >
-        {children.map((variant, index) => (
-          <div key={index}>{variant}</div>
-        ))}
-      </Carousel>
+    // </div>
 
-      <Select
-        options={cheeseVariants}
-        onSelect={(option) => {
-          console.log(option);
-        }}
-      />
-    </div>
+    <>
+      {/* BASE */}
+      <ConfigSection title={ConfigSectionTitle.ConfigureBase}>
+        <ConfigItem
+          title={ConfigItemTitle.Bread}
+          required={true}
+          selectType={ConfigItemSelectType.Carousel}
+          icons={[<WheatIcon />, <GrainIcon />]}
+          // quantity={1}
+        >
+          {breadVariants}
+        </ConfigItem>
+        <ConfigItem
+          title={ConfigItemTitle.Cheese}
+          required={true}
+          selectType={ConfigItemSelectType.Select}
+          quantity={1}
+        >
+          {cheeseVariants}
+        </ConfigItem>
+        <ConfigItem
+          title={ConfigItemTitle.Meat}
+          required={true}
+          selectType={ConfigItemSelectType.Select}
+          quantity={1}
+        >
+          {meatVariants}
+        </ConfigItem>
+        <ConfigItem
+          title={ConfigItemTitle.Dressing}
+          required={true}
+          selectType={ConfigItemSelectType.Carousel}
+          quantity={1}
+        >
+          {dressingVariants}
+        </ConfigItem>
+        <ConfigItem
+          title={ConfigItemTitle.Vegetables}
+          required={true}
+          selectType={ConfigItemSelectType.MultiSelect}
+          // quantity={1}
+        >
+          {vegetableVariant}
+        </ConfigItem>
+      </ConfigSection>
+
+      {/* {/* EXTRAS */}
+      {/* <ConfigSection title={ConfigSectionTitle.ConfigureExtras}>
+        <ConfigItem
+          title={ConfigItemTitle.Egg}
+          required={true}
+          selectType={ConfigItemSelectType.Select}
+        />
+        <ConfigItem
+          title={ConfigItemTitle.Spreads}
+          required={true}
+          selectType={ConfigItemSelectType.Checkbox}
+        />
+        <ConfigItem
+          title={ConfigItemTitle.Serving}
+          required={true}
+          selectType={ConfigItemSelectType.Radio}
+        />
+        <ConfigItem
+          title={ConfigItemTitle.Topping}
+          required={true}
+          selectType={ConfigItemSelectType.Checkbox}
+        />
+      </ConfigSection> */}
+      {/* 
+      FINALIZE 
+      <ConfigSection title={ConfigSectionTitle.FinalizeOrder}>
+        <ConfigItem
+          title={ConfigItemTitle.NamePanini}
+          required={true}
+          selectType={ConfigItemSelectType.Input}
+        />
+        <ConfigItem
+          title={ConfigItemTitle.Cutlery}
+          required={true}
+          selectType={ConfigItemSelectType.Checkbox}
+        />
+        <ConfigItem
+          title={ConfigItemTitle.Napkins}
+          required={true}
+          selectType={ConfigItemSelectType.Checkbox}
+        />
+
+        <Button type={ButtonType.Primary}>PLACE ORDER</Button>
+        <Button type={ButtonType.Secondary}>START AGAIN</Button>
+      </ConfigSection> */}
+    </>
   );
 }
 

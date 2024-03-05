@@ -1,0 +1,8 @@
+.wrapper {
+  max-width: 330px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 15px;
+  column-gap: 8px;
+}

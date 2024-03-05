@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import styles from './Carousel.module.css';
 import { ArrowDirection } from '../../enums';
 
@@ -6,20 +6,35 @@ import { ArrowDirection } from '../../enums';
 import BigArrow from '../icons/BigArrow';
 
 interface CarouselProps {
-  currentChildrenIndex: number;
-  onNextClick: () => void;
-  onPrevClick: () => void;
-  children: ReactNode[];
+  options: string[];
+  icons?: ReactNode[];
+  onSelect: (selectedOption: ReactNode) => void;
 }
 
 const Carousel = (props: CarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNextClick = () => {
+    const nextIndex = (currentIndex + 1) % props.options.length;
+    setCurrentIndex(nextIndex);
+    props.onSelect(props.options[nextIndex]);
+  };
+
+  const handlePrevClick = () => {
+    const prevIndex =
+      (currentIndex - 1 + props.options.length) % props.options.length;
+    setCurrentIndex(prevIndex);
+    props.onSelect(props.options[prevIndex]);
+  };
+
   return (
     <div className={styles.carouselWrapper}>
-      <BigArrow direction={ArrowDirection.Prev} onClick={props.onPrevClick} />
+      <BigArrow direction={ArrowDirection.Prev} onClick={handlePrevClick} />
       <div className={styles.carouselContent}>
-        {props.children[props.currentChildrenIndex]}
+        {props.icons && props.icons[currentIndex]}
+        {props.options[currentIndex]}
       </div>
-      <BigArrow direction={ArrowDirection.Next} onClick={props.onNextClick} />
+      <BigArrow direction={ArrowDirection.Next} onClick={handleNextClick} />
     </div>
   );
 };

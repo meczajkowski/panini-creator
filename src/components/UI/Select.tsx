@@ -34,15 +34,19 @@ const Select = (props: SelectComponentProps) => {
       </div>
       {isOpen && (
         <div className={styles.selectOptions}>
-          {props.options.map((option) => (
-            <div
-              key={option}
-              className={styles.option}
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </div>
-          ))}
+          {props.options.map((option) =>
+            option !== selectedOption ? (
+              <div
+                key={option}
+                className={styles.option}
+                onClick={() => handleOptionClick(option)}
+              >
+                {option}
+              </div>
+            ) : (
+              ''
+            )
+          )}
         </div>
       )}
     </div>
